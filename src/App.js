@@ -1,24 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Loadable from "react-loadable";
+import { MyLoadingComponent } from "./component/common/MyLoadingComponent";
 
-function App() {
+import './style/App.scss';
+import styles from './style/module/demo.module.scss';
+const Home = Loadable({
+  loader: () => import("./page/home"),
+  loading: MyLoadingComponent
+});
+const Login = Loadable({
+  loader: () => import("./page/login"),
+  loading: MyLoadingComponent
+});
+
+function App(props) {
+  console.log(props);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* ------css module start */}
+      <div className={styles.name}>
+        <div>
+          <div className={styles.age}>
+            css module
+            </div>
+        </div>
+      </div>
+      <div className='name'>css2 module </div>
+      {/* ------css module end */}
+
+      <Router>
+        <div>
+          <ul>
+            <li><Link to='/login'>login</Link></li>
+            <li><Link to='/register'>register</Link></li>
+            <li><Link to='/antd'>antd</Link></li>
+            <li><Link to='/'>home</Link></li>
+          </ul>
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </div>
+      </Router>
+
     </div>
   );
 }
