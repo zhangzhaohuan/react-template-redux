@@ -26,14 +26,20 @@ class Login extends Component {
 
 
     render() {
-        console.log('render')
+        console.log('render');
+        if(this.props.loginState){
+            console.log(this.props.loginState.get('data'));
+            // debugger;
+            console.log(this.props.loginState.get('data').get(0));
+        }
+        // debugger;
         return (
             <div>
                 <div onClick={this.login}>
                     login
                 </div>
                 <div onClick={this.fetchLogin}>fetch</div>
-                {this.props.loginState.data.map((val,index)=>{
+                {this.props.loginState.get('data').map((val,index)=>{
                     return (
                         <li key={val.id}>{val.name}</li>
                     )
@@ -45,7 +51,7 @@ class Login extends Component {
 
 const mapStateToProps = (state/*, ownProps*/) => {
     return {
-        loginState: state.login_reducer
+        loginState: state.get('login_reducer')
     }
 }
 

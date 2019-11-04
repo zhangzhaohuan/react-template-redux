@@ -1,23 +1,25 @@
 // import modifyState from '../modifyState';
+import { Map, List } from 'immutable';
 
-export const initState = {
-    islogin:false,
+
+const initState = Map({
+    islogin: false,
     status: '',
-    loading:false,
-    data:[]
-};
-
-
-
+    loading: false,
+    data: List([])
+});;
 
 export const login_reducer = (state = initState, action) => {
     switch (action.type) {
         case 'logined':
-            return Object.assign({}, state, { islogin: true });
+            return state.set('islogin', true);
+        // return Object.assign({}, state, { islogin: true });
         case 'login_start':
-            return Object.assign({}, state, action.payload);
+            return state.merge(action.payload)
+        // return Object.assign({}, state, action.payload);
         case 'login_end':
-            return Object.assign({}, state, action.payload);
+            return state.merge(action.payload)
+        // return Object.assign({}, state, action.payload);
         default:
             return state;
     }
