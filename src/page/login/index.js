@@ -6,11 +6,6 @@ import { login, fetchLogin } from '../../store/actioncreator/login_actioncreator
 
 
 class Login extends Component {
-
-    constructor(){
-        super();
-        this.state={}
-    }
     componentDidMount() {
         console.log(this.props);
     }
@@ -29,10 +24,8 @@ class Login extends Component {
         console.log('render');
         if(this.props.loginState){
             console.log(this.props.loginState.get('data'));
-            // debugger;
             console.log(this.props.loginState.get('data').get(0));
         }
-        // debugger;
         return (
             <div>
                 <div onClick={this.login}>
@@ -50,6 +43,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state/*, ownProps*/) => {
+    console.log(state);
     return {
         loginState: state.get('login_reducer')
     }
