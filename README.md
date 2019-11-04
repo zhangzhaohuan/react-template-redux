@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## 此分支依据tag：v1.0创建
 ## 开发环境
 ```
 node : v12.6.0
