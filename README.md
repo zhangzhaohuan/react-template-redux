@@ -9,36 +9,24 @@ create-react-app: 3.1.2
 ## 主要框架版本
 ```
 react: ^16.9.0
+react-dom: ^16.9.0
+"redux": "^4.0.4",
+"redux-thunk": "^2.3.0",
+"react-router": "^5.1.2",
+"react-router-dom": "^5.1.2",
 webpack: 4.40.2
+"webpack-dev-server": "3.2.1",
+"antd": "^3.24.3",
+```
+### 架构
+recat + react-router + redux + redux-thunk
+## 默认配置支持
+* sass、sass-module 、css 、css-module
+```
+#关键配置
+modules: true
 ```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
