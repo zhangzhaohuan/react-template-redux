@@ -1,3 +1,4 @@
+## 此分支依据tag：v1.1创建
 ## 版本tag
 v1.0  : react + redux
 v1.1  : react + redux + immutable
