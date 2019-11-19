@@ -1,4 +1,6 @@
 ## 此分支依据tag：v1.0创建
+### 架构
+recat + react-router + redux + redux-thunk
 ## 开发环境
 ```
 node : v12.6.0
@@ -17,8 +19,6 @@ webpack: 4.40.2
 "webpack-dev-server": "3.2.1",
 "antd": "^3.24.3",
 ```
-### 架构
-recat + react-router + redux + redux-thunk
 ## 默认配置支持
 * sass、sass-module 、css 、css-module
 ```
