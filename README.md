@@ -1,6 +1,15 @@
-## 此分支依据tag：v1.0创建
+
 ### 架构
-recat + react-router + redux + redux-thunk
+recat + react-router + redux + redux-thunk + ***react-intl***
+### react-intl 国际化
+[react-intl学习](https://www.cnblogs.com/videring/articles/7452078.html)
+```
+npm install react-intl -save
+为了兼容Safari各个版本，需要同时安装 intl，intl在大部分的『现代』浏览器中是默认自带的，但是Safari和IE11以下的版本就没有了
+npm install intl --save
+```
+
+
 ## 开发环境
 ```
 node : v12.6.0
