@@ -1,6 +1,6 @@
 ## 版本tag
-v1.0  : react + redux
-v1.1  : react + redux + immutable
+v1.0  : react + redux  + redux-thunk
+v1.1  : react + redux + redux-thunk +  immutable
 
 ## 开发环境
 ```
