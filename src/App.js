@@ -31,12 +31,12 @@ function App(props) {
 
       <Router>
         <div>
+        <div>路由如下：</div>
           <ul>
             <li><Link to='/login'>login</Link></li>
-            <li><Link to='/register'>register</Link></li>
-            <li><Link to='/antd'>antd</Link></li>
             <li><Link to='/'>home</Link></li>
           </ul>
+          <div>UI界面如下：</div>
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/" component={Home} />

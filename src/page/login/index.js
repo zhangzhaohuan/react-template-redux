@@ -28,10 +28,11 @@ class Login extends Component {
         }
         return (
             <div>
-                <div onClick={this.login}>
+                <button onClick={this.login}>
                     login
-                </div>
-                <div onClick={this.fetchLogin}>fetch</div>
+                </button>
+                <br />
+                <button onClick={this.fetchLogin}>fetch</button>
                 {this.props.loginState.get('data').map((val,index)=>{
                     return (
                         <li key={val.id}>{val.name}</li>
