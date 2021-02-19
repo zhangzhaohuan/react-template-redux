@@ -26,9 +26,16 @@ export const fetchLogin = () => (dispatch, getState) => {
             payload: Map({
                 loading: false,
                 islogin: true,
-                status: 'login_start',
+                status: 'login_end',
                 data: List(data.data),
             })
         })
+    })
+}
+
+export const sortList = () => (dispatch, getState) => {
+    dispatch({
+        type: 'sortList',
+        payload: { }
     })
 }

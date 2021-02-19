@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { login, fetchLogin } from '../../store/actioncreator/login_actioncreator'
+import { login, fetchLogin, sortList } from '../../store/actioncreator/login_actioncreator'
 
 
+import { Map, List, is, fromJS } from 'immutable';
 
 
 class Login extends Component {
     componentDidMount() {
-        console.log(this.props);
+
+
+
+        const one = Map(
+            {
+                a: 10,
+                b: List([1, 2, 3])
+            });
+        const two = Map({ b: 40, a: 50, d: 60 })
+        const tree = one.merge({ b: List([1, 2, 3]) });
+        console.log(one);
+        console.log(tree);
+        console.log(is(one, tree));
     }
 
     login = () => {
@@ -18,22 +31,44 @@ class Login extends Component {
         this.props.fetchLogin();
     }
 
+    sort = () => {
+        this.props.sortList();
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        const props = this.props;
+
+
+        const nextloginState = this.props.loginState;
+        const { loginState } = nextProps;
+        console.log('shouldComponentUpdate')
+        console.log(nextloginState);
+        console.log(loginState);
+        console.log(is(loginState, nextloginState));
+        console.log(nextloginState === loginState)
+        return true;
+    }
+
 
 
     render() {
         console.log('render');
-        if(this.props.loginState){
+        if (this.props.loginState) {
             console.log(this.props.loginState.get('data'));
             console.log(this.props.loginState.get('data').get(0));
         }
         return (
             <div>
-                <button onClick={this.login}>
-                    login
-                </button>
-                <br />
                 <button onClick={this.fetchLogin}>fetch</button>
-                {this.props.loginState.get('data').map((val,index)=>{
+                <br />
+                <br />
+
+                <button onClick={this.sort}>
+                    排序
+                </button>
+
+
+                {this.props.loginState.get('data').map((val, index) => {
                     return (
                         <li key={val.id}>{val.name}</li>
                     )
@@ -54,5 +89,6 @@ const mapStateToProps = (state/*, ownProps*/) => {
 
 export default connect(mapStateToProps, {
     loginDispatch: login,
-    fetchLogin: fetchLogin
+    fetchLogin: fetchLogin,
+    sortList: sortList
 })(Login)
