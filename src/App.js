@@ -32,10 +32,10 @@ function App(props) {
       <Router>
         <div>
           <ul>
-            <li><Link to='/login'>login</Link></li>
-            <li><Link to='/register'>register</Link></li>
-            <li><Link to='/antd'>antd</Link></li>
-            <li><Link to='/'>home</Link></li>
+            <li><Link to='/login'>/login</Link></li>
+            <li><Link to='/register'>/register</Link></li>
+            <li><Link to='/antd'>/antd</Link></li>
+            <li><Link to='/'>/home</Link></li>
           </ul>
           <Switch>
             <Route path="/login" component={Login} />

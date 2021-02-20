@@ -1,13 +1,10 @@
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { login, fetchLogin } from '../../store/actioncreator/login_actioncreator'
 
-import Header from './header.js';
-import Content from './content.js';
 
-
-
-class Login extends Component {
+class Header extends Component {
 
     constructor() {
         super();
@@ -26,11 +23,10 @@ class Login extends Component {
     }
 
     render() {
-        console.log('render')
+      console.log('render header');
         return (
             <div>
-                <Header />
-                <Content />
+
                 <div onClick={this.login}>
                     login
                 </div>
@@ -56,4 +52,4 @@ const mapStateToProps = (state/*, ownProps*/) => {
 export default connect(mapStateToProps, {
     loginDispatch: login,
     fetchLogin: fetchLogin
-})(Login)
+})(Header)
